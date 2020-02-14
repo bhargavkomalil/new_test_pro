@@ -1,0 +1,31 @@
+<div class="container">
+    <div id="accordion">
+        
+        <div class="card" *ngFor='let elements of this.commentsArray; let first_i = index'>
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0 d-inline">
+                    <button class="btn btn-link" data-toggle="collapse" [attr.data-target]="'#collapseOne'+first_i" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        <span class="lablename">{{elements.data.subreddit}}</span>
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne{{first_i}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body" id="child1{{first_i}}">
+                    <div class="card" *ngFor='let all_awards of elements.data.all_awardings; let i = index'>
+                        <div class="card-header" >
+                            <a href="#" data-toggle="collapse" class="lablename"
+                                [attr.data-target]="'#collapseOneA'+i+first_i">{{all_awards.name}}</a>
+                        </div>
+                        <div class="card-body collapse" [attr.data-parent]="'#child1'+first_i" id="collapseOneA{{i}}{{first_i}}">
+                            {{all_awards.description}}
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>

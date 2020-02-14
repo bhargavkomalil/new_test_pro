@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  endpoint:"https://www.reddit.com/.json"
 };
 
 /*
@@ -12,5 +13,20 @@ export const environment = {
  *
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
- */
+//  */
+
+
+//    "postinstall": "ng build --output-path angularapp --aot --prod"
+//   },
+//   "engines": {
+//     "node":"v10.16.3",
+//     "npm":"6.9.0"
+//   },
+
+
+
+
+
+
+
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
